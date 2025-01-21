@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Card with Location</title>
+  <style>
+    /* General reset and body styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      font-weight: 600;
+      margin: 20px 0;
+      z-index: 2; /* Ensure the text is above the video */
+    }
+
+    /* Container for the content on top of video */
+    .container {
+      position: relative;
+      z-index: 2; /* Ensure the content appears above the video */
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Add slight transparency */
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .menu-card {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    /* Button Styling */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Video Styling */
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the whole background */
+      z-index: 1; /* Make sure the video is behind the content */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      .menu-card {
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 10px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Video background -->
+  <video autoplay loop muted>
+    <source src="mark.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content on top of the video -->
+  <div class="container">
+    <h1>Welcome to Our Puna Pav-Bhaji and Veg Pulav Center</h1>
+    <img src="menu.jpg" alt="Menu Card" class="menu-card">
+    <a href="https://maps.app.goo.gl/n64Natw8XCuFbQeW7" class="btn" target="_blank">View Our Location</a>
+  </div>
+</body>
+</html>
